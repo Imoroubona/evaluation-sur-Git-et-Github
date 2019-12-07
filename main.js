@@ -59,7 +59,7 @@ class Caroussel{
 
 
     /**
-     * 
+     * Crée et applique les boutons de navigations.
      */
     
     createNavigation(){

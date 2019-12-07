@@ -1,0 +1,110 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 50px;
+    line-height: 1.2;
+    background: linear-gradient(45deg, #f0380abe, #e0cc10) center center repeat;
+}
+
+.title{
+    font-size: 25px;
+    padding: 25px;
+    font-weight:bold;
+    font-style: italic;
+    color: #fff;
+}
+
+.item{
+    margin: 40px 10px;
+    background-color: #fff;
+    box-shadow: 0 15px 35px #4fe9291a, 0 5px 15px #172ad31a;
+    transition: transform 0.3s;
+    transform: translate3d(0, -1px, 0);
+}
+
+.item:hover{
+    transform: translate3d(0, -10px, 0);
+}
+
+.item img{
+    display: block;
+    height: auto; 
+    width: 100%;
+}
+
+.item__body{
+    padding: 25px;
+}
+
+.item__title{
+    font-size: 25px;
+    font-weight: bold;
+    color: #1e10e7cc;
+    margin-bottom: 5px;
+}
+
+.item__description{
+    color: #836363;   
+}
+
+.items {
+  position: relative;
+}
+
+/**
+*  Caroussel
+*/
+
+.caroussel{
+    position: relative;
+}
+
+.caroussel__item {
+    float: left;    
+}
+
+.caroussel__container{
+ transition: transform 0.3s;
+ transform: translate3d(0, 0, 0);
+}
+
+
+.caroussel__container::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.caroussel__next, .caroussel__prev{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: #fff url(right.svg) center center no-repeat;
+    background-size: 20px 20px;
+    border-radius: 50%;
+    top: 50%;
+    margin-top: -20px;
+    right:  0px;
+    box-shadow: 0 15px 35px #4fe9291a, 0 5px 15px #172ad31a;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+} 
+
+.caroussel__next:hover, .caroussel__prev:hover{
+    transform: scale(1.2)
+}
+
+.caroussel__prev {
+  right: auto;
+  left: -20px;
+}
+
+.caroussel__prev--hidden, .caroussel__next--hidden{
+    opacity: 0;
+}
